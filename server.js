@@ -17,5 +17,6 @@ app.get("/", (req, res) => {
 
 app.listen(4000, () => {
     console.log(`Server is running🏃‍♀️ on port ${port}`)
+    console.log("Initialising schedulePost function");
     schedulePost();
 });

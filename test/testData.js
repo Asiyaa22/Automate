@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Resolve the path to the JSON file
-const jsonFilePath = path.resolve(__dirname, "../src/data/data.json");
+const jsonFilePath = path.resolve(__dirname, "../src/data/tweet.json");
 
 
 //Loading JSON data
