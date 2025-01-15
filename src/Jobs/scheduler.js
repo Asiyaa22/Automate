@@ -14,15 +14,15 @@ const jsonFilePath = path.resolve(__dirname, "../data/tweet.json");
 
 //Loading JSON data
 const data = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
-
+console.log(data);
 // console.log("Data of tweets", data);
 const schedulePost = () => {
     console.log("SchedulPost function started");
-    data.forEach((quote) => {
+    data.forEach(({quote, time}) => {
     // converting time in cron format
-    // const [hour, minute] = time.split(":");
+    const [hour, minute] = time.split(":");
     // console.log(`tweet "${quote} will be pushed at minute ${minute} and hour ${hour}`);
-    cron.schedule("* * * * *", () => {
+    cron.schedule(`${minute} ${hour} * * *`, () => {
         console.log(`Posting tweet: "${quote}"`);
         pushToTwitter(quote);
     });
