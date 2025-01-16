@@ -18,7 +18,6 @@ const pushToTwitter = async (quote) => {
     }catch(err){
         return console.log("Error in posting", err);
     }
-    console.log("posted success🏁");
 }
 
 export default pushToTwitter ;
